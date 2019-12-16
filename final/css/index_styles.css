@@ -1,0 +1,48 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.card-img-top {
+    max-height: 400px;
+}
+
+#play {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.training-card-body {
+    height: 350px;
+}
+
+.result-card-body {
+    height: 300px;
+}
+
+#vsbody {
+    border: 0px;
+    align-items: center;
+    height: 700px;
+}
+
+#vsdiv {
+    width: 480px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.result-section {
+    /* vertical */
+    align-items: center;
+    /* horizontal */
+    justify-content: center;
+}
+
+.result-section img {
+    max-width: 480px;
+    max-height: 400px;
+}
+
+#again-div {
+    margin: 5px;
+}
