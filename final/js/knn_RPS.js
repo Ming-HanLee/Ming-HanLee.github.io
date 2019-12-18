@@ -26,10 +26,11 @@ async function app() {
         // to the KNN classifier.
         const activation = net.infer(img, 'conv_preds');
 
-        // Pass the intermediate activation to the classifier.
+        // Pass the intermediate activation to the classifier. 
+        // Labeling. When the classifier sees this pattern of activation, it knows its classId.
         classifier.addExample(activation, classId);
 
-        //draw vid to canvas, then convert it to <img>
+        // Draw vid to canvas, then convert it to <img>
         var canvas = document.createElement('canvas');
         canvas.height = vid.height;
         canvas.width = vid.width;
@@ -39,7 +40,7 @@ async function app() {
             alert("Your browser doesn't support HTML5 canvas");
         }
 
-        //put the <img> to the right place
+        // Put the <img> to the right place
         if (classId == 0) {
             $('#rock-img').attr('src', canvas.toDataURL('image/jpeg'));
             $('#rock-text').val(Number($('#rock-text').val()) + 1);
@@ -102,8 +103,13 @@ async function app() {
         console.log($('#cloth-remain').data('value'));
         randomRPS(playerno, Number($('#cloth-remain').data('value')));
         $('#again-div').append($('<button>').addClass('btn btn-warning').attr('id', 'again').attr('onclick', 'playAgain()').html('<h5>AGAIN</h5>'));
+
+        // Scroll to the section
         setTimeout(() => { location.href = '#result-section'; }, 1500);
     })
+
+    // When the user scrolls the page, execute becomeSticky
+    window.onscroll = () => { becomeSticky() };
 
     while (true) {
         if (classifier.getNumClasses() > 0) {

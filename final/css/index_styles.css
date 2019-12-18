@@ -2,6 +2,24 @@ html {
     scroll-behavior: smooth;
 }
 
+main {
+    padding: 50px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.main {
+    padding-top: 470px;
+}
+
+.pred-con-color {
+    background-color: yellow;
+}
+
 .card-img-top {
     max-height: 400px;
 }
