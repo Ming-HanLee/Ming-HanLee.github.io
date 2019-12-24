@@ -2,7 +2,7 @@ var randomRPS = (players, cnt) => {
     var r = Math.floor(Math.random() * 50);
     var finalResult = $('#final-result');
     var result = '';
-    var condict = { 'even': 'Even. AGAIN', 'win': 'You win, RimaoSensei takes off 1 piece of cloth.', 'lose': 'You lose, RimaoSensei puts on 1 piece of cloth.' };
+    var condict = { 'even': 'Even. AGAIN!', 'win': 'You win, you takes off my cloth! HoHoHo.', 'lose': 'You lose, oh no, I need to put on 1 cloth.' };
     var senseidict = { 0: "RimaoSensei picks Rock", 1: "RimaoSensei picks Paper", 2: "RimaoSensei picks Scissors" };
     if (r % 3 == 0) {
         $('#senseino-img').attr('src', './image/rock.jpg');
@@ -14,6 +14,7 @@ var randomRPS = (players, cnt) => {
         $('#senseino-img').attr('src', './image/scissors.jpg');
         $('#senseino-pick').text("Scissors");
     }
+
 
     if (players == "Rock" && r % 3 == 0) {
         result = condict['even'];
@@ -41,11 +42,28 @@ var randomRPS = (players, cnt) => {
         cnt += 1;
     }
 
+    var $cloth = $('#cloth-img');
+    if (cnt > 4) {
+        $cloth.attr('src', './image/' + '4' + '.jpg')
+    } else {
+        $cloth.attr('src', './image/' + cnt + '.jpg')
+    }
+
 
     finalResult.html("<h2>" + result + "</h2>");
 
     var cloth = $('#cloth-remain');
-    cloth.html("<h2>" + cnt + " clothes remain to have Sensei wear nothing</h2>");
+    if (cnt > 4) {
+        cloth.html("<h2>" + "I wear too much. It's so hot. " + (cnt - 1) + " pieces remaining</h2>");
+    } else if (cnt == 3) {
+        cloth.html("<h2>" + "I took off my beard~~ " + (cnt - 1) + " pieces remaining</h2>");
+    } else if (cnt == 2) {
+        cloth.html("<h2>" + "Look at my cute ears! " + (cnt - 1) + " piece remaining</h2>");
+    } else if (cnt == 1) {
+        cloth.html("<h2>" + "Oh no! I'm nude now <3</h2>");
+    }
+
+
     cloth.data('value', String(cnt));
     cloth.attr('data-value', String(cnt));
 }
