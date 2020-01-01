@@ -1108,10 +1108,8 @@ h6 {
 
 .generic-blockquote {
     padding: 30px 50px 30px 30px;
-    background-image: -moz-linear-gradient(135deg, #ffffff 0%, #EF4130 150%);
-    background-image: -webkit-linear-gradient(135deg, #ffffff 0%, #EF4130 150%);
-    background-image: -ms-linear-gradient(135deg, #ffffff 0%, #EF4130 150%);
-    border-left: 5px solid #0055A4;
+    background-color: #d4c3c3;
+    color: black;
 }
 
 .progress-table-wrap {
@@ -2000,7 +1998,7 @@ nav a:hover {
 
 body {
     background-attachment: fixed;
-    background-image: url("../img/banner-bg.jpg");
+    background-image: url("../img/banner-test2.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2215,7 +2213,7 @@ body:after,
     /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom right, #EF4135, #0055A4);
     /* Standard syntax */
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 .about-area {
@@ -2593,10 +2591,14 @@ body:after,
     }
 }
 
-.play-img {
-    max-height: 206.92px;
-}
-
 .author-book {
     margin-top: 5vh;
+}
+
+.QA-sec {
+    width: 100%;
+}
+
+.QA-text {
+    font-size: 24px;
 }
