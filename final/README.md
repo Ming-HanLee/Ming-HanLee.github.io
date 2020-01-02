@@ -11,18 +11,21 @@
 將狸貓先生的衣服全部脫光
 
 # 該如何遊玩
-## First step. 訓練網路攝影機看懂你的手勢 (請允許網頁存取你的網路攝影機)
+## Step 1. 訓練網路攝影機看懂你的手勢 (請允許網頁存取你的網路攝影機)
 下滑到Training區，會看到有三個小區塊分別是Rock、Scissors、Paper。首先請對著攝影機比出你自己定義的Rock手勢 (可以是一般石頭、數字1 或是任何你想得到的手勢)，比好後連續點擊Rock的Add Sample截圖，截至50張以上即可，期間可以不斷動作，不用保持靜止，唯需要保持自訂義手勢，不可亂換手勢。Scissors、Paper也是一模一樣的動作。
 
-## Second step. 猜拳
+## Step 2. 猜拳
 下滑到Playing區，比好欲出拳之手勢，按下藍色長條按鈕，系統即會截取你的手勢進行辨識後與狸貓先生出的拳比結果，判定輸贏。
 
-## Third step. 結果
+## Step 3. 結果
 系統判斷完後會自動下滑到Result區，將勝負結果顯示出來並顯示裡貓先生目前還穿著幾件衣服。圖片只有在衣服件數小於等於3的時候會有變化。
 
-# 使用到的技術
+## Step 4. AGAIN
+如果想要再次猜拳的話按下AGAIN後會自動捲動至Playing區，重複Step 2.即可再次遊玩。
+
+# 使用到的比較特別的技術
 ## Tensorflow.js
-用transfer learning將預先訓練好的模型引入並用在分辨手勢。<br>
+用transfer learning將預先訓練好的模型引入重新訓練部分參數並用在分辨手勢。<br>
 API與相關教學請參照：https://www.tensorflow.org/js/tutorials/transfer/image_classification
 
 ## Webcam截圖在不使用後端的情況下保存在網頁上
@@ -31,3 +34,16 @@ API與相關教學請參照：https://www.tensorflow.org/js/tutorials/transfer/i
 <br> 看起來好像可行，但想想有必要這麼麻煩嗎？於是我上網查了一下，發現有個element叫做canvas。
 <br> **Approach 2. 將截圖繪製在 html canvas上**
 <br> 這樣就可以免去後端，並達到將截圖放在頁面上了！於是我就決定採用這種方法。
+
+## Sticky item
+假如有一個item目前的位置在網頁中間，然後往下滑動到那個item的時候它會黏在頁面頂端跟著頁面滑動，這個就是所謂的sticky item。我的webcam item就是一個sticky item。
+
+# 網頁亮點
+1. 使用到tensorflow.js。
+2. 將這門課所學發揮得淋漓盡致，html + css + boostrap + javascript + jquery + API，把老師上課教的全部融會貫通後打造出此應用。
+3. 讓使用者可以體驗到最新的深度學習圖像辨認應用，親自訓練模型。
+4. 讓使用者能夠在聖誕節孤單寂寞的時候消遣。
+5. 排版美觀不傷眼。
+6. 狸貓先生手繪非常之可愛
+7. 可以用webcam拍照
+8. 此項圖像辨識技術可以延伸出許多應用，例如購物網站可以以圖片搜尋買家所尋找的商品。
