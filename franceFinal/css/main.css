@@ -2564,7 +2564,7 @@ body:after,
     box-sizing: border-box;
     display: inline-block;
     margin: 5vh 5vw;
-    height: 35vh;
+    max-height: 35vh;
     width: 35vw;
     padding: 1vmin;
     position: relative;
